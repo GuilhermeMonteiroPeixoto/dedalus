@@ -354,7 +354,8 @@ class Layout:
     def _group_arrays(self, elements, domain):
         # Convert to groups basis-by-basis
         grid_space = self.grid_space
-        groups = np.zeros_like(elements)
+        #groups = np.zeros_like(elements)
+        groups = np.zeros(elements.shape, dtype=object)
         groups = np.ma.masked_array(groups)
         for basis in domain.bases:
             basis_axes = slice(basis.first_axis, basis.last_axis+1)
